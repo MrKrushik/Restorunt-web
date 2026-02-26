@@ -1,0 +1,621 @@
+:root {
+    --gold: #C5A880;
+    --dark: #0f0f11;
+    --darker: #080809;
+    --light: #f9f9f9;
+    --gray: #888888;
+    --trans-gold: rgba(197, 168, 128, 0.1);
+    --transition: all 0.4s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--darker);
+    color: var(--light);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+.logo {
+    font-family: 'Playfair Display', serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.full-width {
+    max-width: 100%;
+    padding: 0;
+}
+
+section {
+    padding: 8rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.alt-bg {
+    background-color: var(--dark);
+}
+
+.sec-title {
+    text-align: center;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: var(--gold);
+}
+
+.sec-subtitle {
+    text-align: center;
+    color: var(--gray);
+    font-size: 1.1rem;
+    margin-bottom: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 1rem 3rem;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: var(--transition);
+    background: transparent;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: var(--gold);
+    color: var(--dark);
+}
+
+.center-btn {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.full-btn {
+    width: 100%;
+}
+
+/* Navbar */
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background: transparent;
+    /* Changed by JS */
+    padding: 1.5rem 0;
+    transition: var(--transition);
+}
+
+nav.scrolled {
+    background: rgba(8, 8, 9, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--trans-gold);
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 2.5rem;
+    color: var(--gold);
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-list a {
+    color: var(--light);
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.nav-list a:hover {
+    color: var(--gold);
+}
+
+.btn-nav {
+    border: 1px solid var(--gold);
+    padding: 0.5rem 1.5rem;
+    border-radius: 0;
+}
+
+.btn-nav:hover {
+    background: var(--gold);
+    color: var(--dark) !important;
+}
+
+/* Hamburger Menu (Mobile) */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--light);
+}
+
+/* Hero */
+#hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('../image/hero.avif') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0;
+}
+
+.hero-content h1 {
+    font-size: 6rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    color: var(--gold);
+    font-style: italic;
+    margin-bottom: 3rem;
+}
+
+/* About */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-text h2 {
+    font-size: 3rem;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+}
+
+.about-text p {
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.about-img img {
+    width: 100%;
+    border: 2px solid var(--gold);
+    padding: 15px;
+}
+
+.signature {
+    height: 60px;
+    filter: invert(70%) sepia(40%) saturate(400%) hue-rotate(350deg);
+}
+
+/* Philosophy */
+.phil-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    text-align: center;
+}
+
+.phil-card i {
+    font-size: 3rem;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+}
+
+.phil-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.phil-card p {
+    color: var(--gray);
+}
+
+/* Signature Menu */
+.sig-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.sig-item {
+    display: flex;
+    gap: 1.5rem;
+    background: var(--dark);
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.4s;
+}
+
+.sig-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold);
+}
+
+.sig-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.sig-info h3 {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dashed var(--gray);
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.sig-info span {
+    color: var(--gold);
+}
+
+.sig-info p {
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+/* Full Menu */
+.menu-cats {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.menu-list {
+    margin-bottom: 3rem;
+}
+
+.menu-list h3 {
+    font-size: 2rem;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    text-decoration: underline;
+    text-decoration-color: var(--trans-gold);
+    text-underline-offset: 10px;
+}
+
+.menu-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    border-bottom: 1px dotted #333;
+    padding-bottom: 5px;
+}
+
+.menu-row span:last-child {
+    color: var(--gold);
+}
+
+/* Experience */
+.exp-banner {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1920&q=80') center/cover fixed;
+    text-align: center;
+    padding: 10rem 2rem;
+}
+
+.exp-banner h2 {
+    font-size: 4rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+}
+
+.exp-banner p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+}
+
+/* Chefs */
+.chef-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    text-align: center;
+}
+
+.chef-card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: 0.5s;
+    border: 1px solid var(--trans-gold);
+}
+
+.chef-card:hover img {
+    filter: grayscale(0%);
+    border-color: var(--gold);
+}
+
+.chef-card h3 {
+    font-size: 2rem;
+    margin-top: 1.5rem;
+    color: var(--gold);
+}
+
+.chef-card p {
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+}
+
+/* Gallery */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.gal-item {
+    height: 250px;
+    overflow: hidden;
+}
+
+.gal-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.gal-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Reviews */
+.review-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.review-card {
+    background: var(--darker);
+    padding: 3rem 2rem;
+    text-align: center;
+    border: 1px solid var(--trans-gold);
+}
+
+.review-card i {
+    color: var(--gold);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.review-card p {
+    font-style: italic;
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+}
+
+.review-card h4 {
+    color: var(--gold);
+}
+
+/* =========================================
+   11. Luxury Reservation Section 
+   ========================================= */
+.reservation-section {
+    padding: 8rem 0;
+    background: linear-gradient(to bottom, var(--darker), var(--dark));
+}
+
+.res-container {
+    display: flex;
+    background: #111;
+    border: 1px solid var(--trans-gold);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+/* Left side Image */
+.res-image {
+    flex: 1;
+    /* Apni offline image lagane ke liye isko url('images/reservation-bg.jpg') kar dena */
+    background: url('../image/res.avif') center/cover no-repeat;
+    min-height: 600px;
+    border-right: 1px solid var(--trans-gold);
+}
+
+/* Right side Form Area */
+.res-form-wrap {
+    flex: 1.2;
+    padding: 5rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.luxury-form .form-row {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.luxury-form .input-group {
+    position: relative;
+    flex: 1;
+}
+
+/* Icon inside input */
+.luxury-form .input-group i {
+    position: absolute;
+    left: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gold);
+    font-size: 1.1rem;
+    pointer-events: none;
+}
+
+/* Custom Input Styling */
+.luxury-form input,
+.luxury-form select {
+    width: 100%;
+    padding: 1.2rem 1rem 1.2rem 3.5rem;
+    /* Left padding space for icons */
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(197, 168, 128, 0.2);
+    color: var(--light);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+/* Change calendar/clock icon color to white for standard inputs */
+.luxury-form input[type="date"]::-webkit-calendar-picker-indicator,
+.luxury-form input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}
+
+/* Focus effects */
+.luxury-form input:focus,
+.luxury-form select:focus {
+    border-color: var(--gold);
+    background: rgba(197, 168, 128, 0.05);
+    outline: none;
+    box-shadow: 0 0 15px rgba(197, 168, 128, 0.1);
+}
+
+/* Remove default select arrow and add custom feel */
+.luxury-form select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C5A880' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+}
+
+.luxury-form select option {
+    background: var(--dark);
+    color: var(--light);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 991px) {
+    .res-container {
+        flex-direction: column;
+    }
+
+    .res-image {
+        min-height: 300px;
+        border-right: none;
+        border-bottom: 1px solid var(--trans-gold);
+    }
+
+    .res-form-wrap {
+        padding: 3rem 2rem;
+    }
+
+    .luxury-form .form-row {
+        flex-direction: column;
+        gap: 0;
+        margin-bottom: 0;
+    }
+
+    .luxury-form .input-group {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 3rem;
+    background: #000;
+    border-top: 2px solid var(--gold);
+}
+
+footer .logo {
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.socials {
+    margin: 1.5rem 0;
+    gap: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.socials a {
+    color: var(--gold);
+    font-size: 1.5rem;
+    transition: 0.3s;
+}
+
+.socials a:hover {
+    color: var(--light);
+    transform: translateY(-3px);
+}
+
+footer p {
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+/* Animations & Mobile */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 991px) {
+
+    .phil-grid,
+    .chef-grid,
+    .review-grid,
+    .about-grid,
+    .sig-grid,
+    .contact-grid {
+        grid-template-columns:
